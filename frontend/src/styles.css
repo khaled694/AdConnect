@@ -1,0 +1,290 @@
+:root {
+  --color-background: #f4f7f8;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8fafb;
+  --color-text: #172126;
+  --color-text-muted: #5d6b72;
+  --color-border: #d9e1e5;
+  --color-border-strong: #bdc9ce;
+  --color-primary: #0f766e;
+  --color-primary-hover: #0b5f59;
+  --color-danger: #b42318;
+  --color-danger-hover: #8f1c13;
+  --shadow-card: 0 5px 18px rgba(23, 33, 38, 0.06);
+  --radius-card: 8px;
+  --radius-control: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.page-container,
+.dashboard-page,
+.youtubers-page,
+.home-page {
+  margin: 0 auto;
+  max-width: 1180px;
+  width: 100%;
+}
+
+.section-card,
+.panel,
+.filter-panel,
+.auth-card,
+.youtuber-card,
+.campaign-card,
+.request-card,
+.category-card,
+.stat-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.grid,
+.card-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.field,
+.filter-field,
+.form-field,
+.form-stack > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+label {
+  color: #334147;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  background: #ffffff;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-control);
+  color: var(--color-text);
+  font: inherit;
+  min-height: 42px;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+textarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.14);
+  outline: none;
+}
+
+button,
+.button-link,
+.btn,
+.link-button {
+  align-items: center;
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-control);
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-weight: 700;
+  justify-content: center;
+  min-height: 42px;
+  padding: 9px 15px;
+  text-decoration: none;
+  transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+
+button:hover,
+.button-link:hover,
+.btn-primary:hover,
+.link-button:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+button:focus-visible,
+.button-link:focus-visible,
+.btn:focus-visible,
+.link-button:focus-visible,
+a:focus-visible {
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.2);
+  outline: none;
+}
+
+button:disabled,
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.btn-primary,
+.primary-button {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-secondary,
+.secondary-button {
+  background: #ffffff;
+  border-color: var(--color-border-strong);
+  color: var(--color-text);
+}
+
+.btn-secondary:hover,
+.secondary-button:hover {
+  background: #eef3f4;
+  border-color: #aab9bf;
+}
+
+.btn-danger,
+.danger-button {
+  background: var(--color-danger);
+  border-color: var(--color-danger);
+  color: #ffffff;
+}
+
+.btn-danger:hover,
+.danger-button:hover {
+  background: var(--color-danger-hover);
+  border-color: var(--color-danger-hover);
+}
+
+.status-badge {
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 9px;
+}
+
+.status-pending {
+  background: #fff0c2;
+  color: #805500;
+}
+
+.status-accepted {
+  background: #d9f1e1;
+  color: #176135;
+}
+
+.status-rejected {
+  background: #f9dcd8;
+  color: #9b2118;
+}
+
+.state-message,
+.error-message,
+.success-message {
+  border-radius: var(--radius-control);
+  margin: 16px 0;
+  padding: 12px 14px;
+}
+
+.state-message {
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.error-message {
+  background: #fff2f0;
+  border: 1px solid #f2bbb5;
+  color: #9f251b;
+}
+
+.success-message {
+  background: #edf8f0;
+  border: 1px solid #b8ddc3;
+  color: #23683a;
+}
+
+.table-wrapper {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--color-border);
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: var(--color-surface-muted);
+  color: #425158;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+tbody tr:hover {
+  background: #f8fbfb;
+}
+
+@media (max-width: 680px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+}

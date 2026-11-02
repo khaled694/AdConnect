@@ -1,0 +1,20 @@
+<nav class="navbar">
+  <a class="navbar-brand" routerLink="/home">AdConnect</a>
+
+  <div class="navbar-links">
+    <a class="nav-link" routerLink="/home" routerLinkActive="active-link">Home</a>
+    <a class="nav-link" routerLink="/youtubers" routerLinkActive="active-link">YouTubers</a>
+
+    @if (isLoggedIn()) {
+      <a class="nav-link" [routerLink]="dashboardRoute()" routerLinkActive="active-link">Dashboard</a>
+      <button class="logout-button" type="button" (click)="logout()">Logout</button>
+    } @else {
+      <a class="nav-link" routerLink="/login" routerLinkActive="active-link">Login</a>
+      <a class="register-link" routerLink="/register" routerLinkActive="active-link">Register</a>
+    }
+  </div>
+</nav>
+
+<main class="page-content">
+  <router-outlet />
+</main>
